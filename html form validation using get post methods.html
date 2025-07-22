@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title> form validation </title>
+</head>
+<style>
+    </style>
+    <body>
+        <form action="form.html" method="post">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            
+            <input type="radio" id="hash" name="hash" value="car">
+            <label for="hash">car</label><br>
+
+            <input type="radio" id="hash" name="hash" value="bike">
+            <label for="hash">bike</label><br>
+
+            <input type="checkbox" id="para" name="vechile" value="bus">
+            <label for="para">bus</label><br>
+
+            <input type="checkbox" id="para" name="vechile" value="train">
+            <label for="para">train</label><br>
+
+            <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars" size="3"multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat" selected>Fiat</option>
+            <option value="audi">Audi</option>
+            </select><br><br>
+
+            <textarea name="message" rows="10" cols="30">
+           The cat was playing in the garden.
+             </textarea><br>
+           <button type="button" onclick="alert('Hello!')">Click me!</button><br>
+
+       <input list="browsers">
+       <datalist id="browsers">
+       <option value="Edge">
+       <option value="Firefox">
+       <option value="Chrome">
+       <option value="Opera">
+       <option value="Safari">
+      </datalist><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+    </html>
+

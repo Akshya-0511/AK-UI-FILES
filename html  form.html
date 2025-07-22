@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title> form validation </title>
+</head>
+<style>
+    body {
+        background-color: lightblue;
+        padding-left: 20px;
+    }
+    </style>
+    <body>
+        <form action="form.html" method="post">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+
+            <h4> Select the color</h4>
+            <input type="radio" id="hash" name="hash" value="red">
+            <label for="hash">This color is red.</label><br>
+            <input type="radio" id="hash" name="hash" value="green">
+            <label for="hash">This color is green.</label><br>
+
+            <h4> verify the checkbox</h4>
+            <input type="checkbox" id="para" name="verify" value="bus">
+            <label for="para">Yes</label><br>
+            <input type="checkbox" id="para" name="verify" value="train">
+            <label for="para">No</label><br>
+
+            <h4> Select the language</h4>
+            <label for="cars">Choose a language:</label>
+            <select id="cars" name="cars" size="3"multiple>
+            <option value="Tamil">Tamil</option>
+            <option value="English">English</option>
+            <option value="Malayalam">Malayalam</option>
+            <option value="Hindi">Hindi</option>
+            </select><br><br>
+
+            <textarea name="message" rows="10" cols="30">
+             The cat was playing in the garden.
+             </textarea><br><br>
+           <button type="button" onclick="alert('Hello!')">Click me!</button><br>
+
+       <input list="browsers">
+       <datalist id="browsers">
+       <option value="Edge">
+       <option value="Firefox">
+       <option value="Chrome">
+       <option value="Opera">
+       <option value="Safari">
+      </datalist><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+    </html>
+
