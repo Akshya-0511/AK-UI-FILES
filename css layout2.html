@@ -1,0 +1,83 @@
+<!DoCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout using float </title>
+</head>
+<style>
+    *{box-sizing: border-box;
+    }
+    header{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    nav{
+        float: left;
+        width: 20%;
+        height: 300px;
+        background-color: gainsboro;
+        padding: 30px;
+    }
+    nav ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    article{
+        float: left;
+        width: 80%;
+        padding: 20px;
+        background-color: lightseagreen;
+        height: 300px;
+    }
+    section::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    footer{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        font-size: 20px;;
+    }
+    @media screen and (max-width: 600px) {
+        nav, article {
+            width: 100%;
+            height: auto;
+        }
+    }
+        
+
+    </style>
+    <body>
+        <h2> layout using float </h2>
+        <p> This is a simple layout using float property. </p>
+
+        <header>
+            <h2> MY COLLEGE </h2>
+        </header>
+<section>
+        <nav>
+            <ul>
+                <li> <a href="#"> Home </a> </li>
+                <li> <a href="#"> About </a> </li>
+                <li> <a href="#"> Contact </a> </li>
+                <li> <a href="#"> Gallery </a> </li>
+            </ul>
+        </nav>
+<article> 
+    <h2> DR.MGR UNIVERSITY,CHENNAI </h2>
+    <p> Dr.MGR University is a premier university in Chennai.At Dr. M.G.R. Educational and Research Institute, research is a fundamental pillar of our pursuit of academic excellence and our mission to make a meaningful impact on society. As a leading institution, we are committed to creating a dynamic and innovative environment where research thrives, encouraging both individual exploration and collaborative efforts across disciplines. Our goal is to foster a culture of intellectual curiosity, 
+        where new ideas can flourish and lead to breakthroughs that address real-world challenges.</p>
+
+</article>
+</section>
+<footer>
+    <p span style="text-align: center;"> &copy; 2023 Dr.MGR University. All rights reserved. </p>
+</footer>
+</body>
+</html>

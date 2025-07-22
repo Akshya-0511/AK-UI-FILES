@@ -1,0 +1,87 @@
+<!DoCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box layout </title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    header{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+     section {
+      display: -webkit-flex;
+      display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+     -webkit-flex: 1;
+      -ms-flex: 1;
+     flex: 1;
+     background: #ccc;
+     padding: 20px;
+}
+nav ul {
+    list-style-type: none;
+     padding: 0;
+}
+
+/* Style the content */
+article {
+      -webkit-flex: 3;
+      -ms-flex: 3;
+       flex: 3;
+       background-color: #f1f1f1;
+       padding: 10px;
+    }
+    footer{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        font-size: 20px;;
+    }
+    @media screen and (max-width: 600px) {
+        section {
+           -webkit-flex-direction: column;
+           flex-direction: column;
+        }
+    }
+        
+
+    </style>
+    <body>
+        <h2> Flex layout </h2>
+        <p> This is a simple layout using flex property. </p>
+
+        <header>
+            <h2> MY SCHOOL </h2>
+        </header>
+<section>
+        <nav>
+            <ul>
+                <li> <a href="#"> Home </a> </li>
+                <li> <a href="#"> About </a> </li>
+                <li> <a href="#"> Contact </a> </li>
+                <li> <a href="#"> Gallery </a> </li>
+            </ul>
+        </nav>
+<article> 
+    <h2> PGR SCHOOL,KERALA </h2>
+    <p> PGR School is a premier school in kerala.At PGR School Educational Institute, Education is a fundamental pillar of our pursuit of academic excellence and our mission to make a meaningful impact on society. As a leading institution, we are committed to creating a dynamic and innovative environment where research thrives, encouraging both individual exploration and collaborative efforts across disciplines. Our goal is to foster a culture of intellectual curiosity, 
+        where new ideas can flourish and lead to breakthroughs that address real-world challenges.</p>
+
+</article>
+</section>
+<footer>
+    <p span style="text-align: center;"> &copy; 2023 PGR School. All rights reserved. </p>
+</footer>
+</body>
+</html>
