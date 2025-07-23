@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+       
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #e2e2e2;
+            border-radius: 4px;
+        }
+       
+         </style>
+
+</head>
+<body>
+    <h1 style="text-align: center;">DOM Manipulation Example</h1>
+    <h2> IceCream Flavours</h2>
+    <ul id="mylist">
+        <li> Vanilla</li>
+        <li> Chocolate</li>
+        <li> Strawberry</li>
+        <li> ButterScotch</li>
+        <li> Cookie Dough</li>
+    </ul>
+    <p id="delete">IceCream is very tasty</p>
+
+    <p id="para">old paragraph</p>
+    
+
+    <button onclick="additem()">Add Item</button><br> <br>
+    <button onclick="deleteitem()">Delete Item</button>    <br> <br>
+    <button onclick="highlightLast()">Highlight Last Item</button> <br> <br>
+    <button onclick="removeFirst()">Remove First Item</button><br>  <br>
+    <div class="output" id="output"></div>
+    <input id="myInput" placeholder="Focus and blur" onfocus="onFocusEvent()" onblur="onblurEvent()">
+
+    <script>
+        // DOM access
+        let oldpara = document.getElementById("para");
+        let newpara = document.createElement("p");
+        newpara.textContent = "Yummy IceCream Flavours";
+        oldpara.parentNode.replaceChild(newpara, oldpara);
+        // replacing
+
+        const list = document.getElementById("mylist");
+        const output = document.getElementById("output");
+
+        function additem() {
+            const newItem = document.createElement("li");
+            newItem.textContent = "jackfruit " + (list.children.length + 1);
+            list.appendChild(newItem);
+            output.textContent = "Item added";
+        }
+          function deleteitem() {
+            document.getElementById("delete").remove();
+            
+        }
+        function highlightLast() {
+            const lastItem = list.lastElementChild;
+            if (lastItem) {
+                lastItem.style.backgroundColor = "orange";
+                output.textContent = "Last item highlighted.";
+            } 
+        }
+        function removeFirst() {
+            const firstItem = list.firstElementChild;
+            if (firstItem) {
+                firstItem.remove();
+                output.textContent = "First item removed.";
+            }
+        }
+        function onFocusEvent() {
+            console.log("Input field focused");
+        }
+        function onblurEvent() {
+            console.log("Input field blurred");
+        }
+
+     
+    </script>
+</body>
+</html>
