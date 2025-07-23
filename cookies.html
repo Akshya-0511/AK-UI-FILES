@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Test</title>
+</head>
+<body>
+  <h2>Set and Get Cookies</h2>
+
+  <label for="username">Enter your name:</label>
+  <input type="text" id="username" />
+  <button onclick="saveUsername()">Save</button>
+  <button onclick="showUsername()">Show</button>
+
+  <p id="output"></p>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+      alert("Cookie set: " + document.cookie); // Show live cookie
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+      }
+      return null;
+    }
+
+    function saveUsername() {
+      const user = document.getElementById("username").value;
+      if (user) {
+        setCookie("username", user, 7); // Save for 7 days
+      } else {
+        alert("Please enter a name first.");
+      }
+    }
+
+    function showUsername() {
+      const user = getCookie("username");
+      document.getElementById("output").innerText = user 
+        ? "Hello, " + user 
+        : "No cookie found.";
+    }
+  </script>
+</body>
+</html>
