@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validation Example</title>
+</head>
+<body>
+  <form id="myForm">
+    <label>Email:</label><br>
+    <input type="text" id="email"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password"><br><br>
+
+    <label>Confirm Password:</label><br>
+    <input type="password" id="confirmPassword"><br><br>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      // Simple email pattern
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      alert("Form submitted successfully!");
+      // Optionally submit the form here
+      // document.getElementById("myForm").submit();
+    }
+  </script>
+</body>
+</html>
