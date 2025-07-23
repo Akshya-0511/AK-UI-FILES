@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Handling in JavaScript</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  <h2>Set and Get Cookies</h2>
+
+  <label for="username">Enter your name:</label>
+  <input type="text" id="username" />
+  <button onclick="saveUsername()">Save</button>
+  <button onclick="showUsername()">Show</button>
+
+  <p id="output"></p>
+
+  <script>
+    // Set Cookie Function
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // Get Cookie Function
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+      }
+      return null;
+    }
+
+    // Save Username to Cookie
+    function saveUsername() {
+      const user = document.getElementById("username").value;
+      if (user) {
+        setCookie("username", user, 7); // Save for 7 days
+        alert("Username saved as cookie.");
+      }
+    }
+
+    // Show Username from Cookie
+    function showUsername() {
+      const user = getCookie("username");
+      document.getElementById("output").innerText = user  ? "Username: " + user : "No username found in cookies.";
+
+    }
+  </script>
+</body>
+</html>
